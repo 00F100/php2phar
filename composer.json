@@ -1,0 +1,26 @@
+{
+    "name": "00f100/php2phar",
+    "type": "package",
+    "version": "0.1.0",
+    "description": "Create phar file from your source code",
+    "keywords": ["create", "phar", "file", "your", "me", "source", "code"],
+    "homepage": "https://github.com/00f100/php2phar",
+    "authors": [
+        {
+            "name": "João Moraes",
+            "email": "joaomoraesbr@gmail.com",
+            "homepage": "https://github.com/00f100"
+        }
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "require-dev": {
+        "00f100/phpdbug": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHP2Phar\\": "src/"
+        }
+    }
+}
