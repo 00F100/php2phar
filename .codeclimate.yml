@@ -1,0 +1,19 @@
+---
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - php
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: false
+ratings:
+  paths:
+  - "**.php"
+exclude_paths:
+- dist/
+- vendor/
+- tests/
+- build/
