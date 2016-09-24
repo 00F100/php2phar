@@ -1,17 +1,23 @@
 # php2phar
 Create phar files from your source code
 
-## usage
+## Install
 
-```bash
-   PHP2Phar 0.1.0 
-   Usage:
-     php php2phar.phar --dir-source <path/to/dir> --index-file </path/to/index.php> --output-file <path/to/file.phar>  
+```
+$ wget https://raw.githubusercontent.com/00F100/php2phar/master/dist/php2phar.phar
+```
+or
+[Download Phar file](https://raw.githubusercontent.com/00F100/php2phar/master/dist/php2phar.phar)
 
-     Help: 
-     php php2phar.phar --help  
+## Usage
 
-     Options:
+```
+php php2phar.phar --dir-source <path/to/dir> --index-file </path/to/index.php> --output-file <path/to/file.phar>  
+```
+
+## Options
+
+```
        -d,  --dir-source     Directory of the source code to be sent to the phar file  
        -i,  --index-file     File "index.php" to start new instance of your code 
        -o,  --output-file    File ".phar" to save your code 
