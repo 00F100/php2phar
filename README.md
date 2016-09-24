@@ -1,4 +1,7 @@
 # php2phar
+
+[![Code Climate](https://codeclimate.com/github/00F100/php2phar/badges/gpa.svg)](https://codeclimate.com/github/00F100/php2phar)
+
 Create phar files from your source code
 
 ## Install
