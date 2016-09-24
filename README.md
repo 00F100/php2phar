@@ -3,7 +3,7 @@ Create phar files from your source code
 
 ## usage
 
-```sh
+```bash
    PHP2Phar 0.1.0 
    Usage:
      php php2phar.phar --dir-source <path/to/dir> --index-file </path/to/index.php> --output-file <path/to/file.phar>  
