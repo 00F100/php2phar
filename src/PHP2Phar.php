@@ -37,7 +37,8 @@ namespace PHP2Phar {
                     unlink($this->outputFile . '.gz');
                 }
             }
-            $nameFile = end(explode('/', $this->outputFile));
+            $paths = explode('/', $this->outputFile);
+            $nameFile = end($paths);
             $app = new Phar($this->outputFile, 0, $nameFile);
             $app->startBuffering();
             foreach($this->dirSource as $dir){
