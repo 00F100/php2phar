@@ -4,10 +4,10 @@ Create phar files from your source code
 ## Install
 
 ```
-$ wget https://raw.githubusercontent.com/00F100/php2phar/master/dist/php2phar.phar
+$ wget https://github.com/00F100/php2phar/raw/master/bin/php2phar.phar
 ```
 or
-[Download Phar file](https://raw.githubusercontent.com/00F100/php2phar/master/dist/php2phar.phar)
+[Download Phar file](https://github.com/00F100/php2phar/raw/master/bin/php2phar.phar)
 
 ## Usage
 
