@@ -1,4 +1,3 @@
-bin/*
 vendor/*
 dist/php2phar.phar.gz
 composer.lock
