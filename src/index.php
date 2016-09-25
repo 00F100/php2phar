@@ -10,15 +10,3 @@ if (isset($argv)) {
 		$php2phar->execute();
 	}
 }
-
-if (!isset($argv)) {
-	debug($_SERVER);
-}
-
-// 
-
-// $files = array(
-// 	dirname(__FILE__) . '/',
-// );
-
-// build_phar('phpsize', $files, 'src/index.php', __DIR__ . '/dist/');

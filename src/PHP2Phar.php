@@ -7,7 +7,7 @@ namespace PHP2Phar {
 
     class PHP2Phar
     {
-        const VERSION = '0.3.0';
+        const VERSION = '0.4.1';
 
         private $continue = true;
         private $dirSource = array();
@@ -39,9 +39,9 @@ namespace PHP2Phar {
             if(is_file($this->outputFile)){
                 unlink($this->outputFile);
                 $this->printText("Updating the Phar file ... \n");
-                if(is_file($this->outputFile . '.gz')){
-                    unlink($this->outputFile . '.gz');
-                }
+            }
+            if(is_file($this->outputFile . '.gz')){
+                unlink($this->outputFile . '.gz');
             }
             $paths = explode('/', $this->outputFile);
             $nameFile = end($paths);
