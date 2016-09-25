@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "php": ">=5.5"
+        "php": ">=5.5", 
+        "00f100/phpuphar": "dev-master"
     },
     "require-dev": {
         "00f100/phpdbug": "*"
@@ -22,5 +23,11 @@
         "psr-4": {
             "PHP2Phar\\": "src/"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:00F100/phpuphar.git"
+        }
+    ]
 }

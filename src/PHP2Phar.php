@@ -3,6 +3,7 @@
 namespace PHP2Phar {
 
     use Phar;
+    use PHPUPhar\PHPUPhar;
 
     class PHP2Phar
     {
@@ -12,6 +13,11 @@ namespace PHP2Phar {
         private $dirSource = array();
         private $indexFIle = '';
         private $outputFile = '';
+        private $urlVersion = array(
+            'base' => 'https://raw.githubusercontent.com',
+            'path' => '/00F100/php2phar/master/VERSION',
+        );
+        private $urlDownload = 'https://github.com/00F100/php2phar/raw/master/dist/php2phar.phar';
 
         public function __construct($args)
         {
@@ -79,6 +85,10 @@ namespace PHP2Phar {
                     case '--index-file':
                         $this->indexFIle = next($args);
                         break;
+                    case '-u':
+                    case '--self-update':
+                        return $this->selfUpdateOption();
+                        break;
                 }
                 next($args);
             }
@@ -99,20 +109,33 @@ namespace PHP2Phar {
             return false;
         }
 
+        private function selfUpdateOption()
+        {
+            $this->printText("Versão atual: " . self::VERSION . " \n");
+            $selfUpdate = new PHPUPhar($this->urlVersion, false, self::VERSION, $this->urlDownload, 'php2phar.phar');
+            $this->printText("Versão em 00F100/php2phar: " . $selfUpdate->getVersion() . " \n");
+            if(self::VERSION == $selfUpdate->getVersion()){
+                $this->printText("A sua versão esta atualizada! \n");
+            }
+            if (self::VERSION != $selfUpdate->getVersion() && $selfUpdate->update()) {
+                $this->printText("A sua versão foi atualizada com sucesso! \n");
+            }
+        }
+
         private function helpOption()
         {
             $this->printText("   PHP2Phar " . self::VERSION . " \n");
             $this->printText("   Usage:\n");
             $this->printText("     php php2phar.phar --dir-source <path/to/dir> --index-file </path/to/index.php> --output-file <path/to/file.phar>  \n\n");
-            // $this->printText("     Self Update: \n");
-            // $this->printText("     php php2phar.phar --self-update  \n\n");
+            $this->printText("     Self Update: \n");
+            $this->printText("     php php2phar.phar --self-update  \n\n");
             $this->printText("     Help: \n");
             $this->printText("     php php2phar.phar --help  \n\n");
             $this->printText("     Options:\n");
             $this->printText("       -d,  --dir-source     Directory of the source code to be sent to the phar file  \n");
             $this->printText("       -i,  --index-file     File \"index.php\" to start new instance of your code \n");
             $this->printText("       -o,  --output-file    File \".phar\" to save your code \n");
-            // $this->printText("       -u,  --self-update    Upgrade to the latest version  \n");
+            $this->printText("       -u,  --self-update    Upgrade to the latest version  \n");
             $this->printText("       -v,  --version        Return the installed version of this package  \n");
             $this->printText("       -h,  --help           Show this help  \n");
             return false;
@@ -123,7 +146,7 @@ namespace PHP2Phar {
             echo $text;
         }
 
-        public function exceptionHandler(Exception $exception)
+        public function exceptionHandler($exception)
         {
             $this->printText('[FLOG] ' . $exception->getMessage());
         }
