@@ -7,7 +7,7 @@ namespace PHP2Phar {
 
     class PHP2Phar
     {
-        const VERSION = '0.2.0';
+        const VERSION = '0.3.0';
 
         private $continue = true;
         private $dirSource = array();
