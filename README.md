@@ -21,9 +21,10 @@ php php2phar.phar --dir-source <path/to/dir> --index-file </path/to/index.php> -
 ## Options
 
 ```
-       -d,  --dir-source     Directory of the source code to be sent to the phar file  
-       -i,  --index-file     File "index.php" to start new instance of your code 
-       -o,  --output-file    File ".phar" to save your code 
-       -v,  --version        Return the installed version of this package  
+       -d,  --dir-source     Directory of the source code to be sent to the phar file
+       -i,  --index-file     File "index.php" to start new instance of your code
+       -o,  --output-file    File ".phar" to save your code
+       -u,  --self-update    Upgrade to the latest version
+       -v,  --version        Return the installed version of this package
        -h,  --help           Show this help
  ```
