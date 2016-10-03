@@ -2,7 +2,4 @@ language: php
 php:
   - 5.5
 script:
-  - composer install
-  - php src/index.php -d ./ -i src/index.php -o dist/php2phar.phar
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - make test

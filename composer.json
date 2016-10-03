@@ -1,7 +1,7 @@
 {
     "name": "00f100/php2phar",
     "type": "package",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "description": "Create phar file from your source code",
     "keywords": ["create", "phar", "file", "your", "me", "source", "code"],
     "homepage": "https://github.com/00f100/php2phar",
